@@ -40,6 +40,22 @@ Initial experiments using BCE loss resulted in background-dominated predictions 
 
 The results demonstrate correct pipeline implementation and highlight common challenges in seismic image segmentation, particularly the trade-off between sensitivity and specificity in imbalanced datasets.
 
+## Visualization
+
+Qualitative comparison between the input seismic image, ground truth salt mask, and U-Net prediction trained using Dice loss.
+
+<p align="center">
+  <img src="images/seismic.png" width="30%" />
+  <img src="images/ground_truth.png" width="30%" />
+  <img src="images/prediction.png" width="30%" />
+</p>
+
+<p align="center">
+  <b>Left:</b> Seismic Image &nbsp; | &nbsp;
+  <b>Middle:</b> Ground Truth Mask &nbsp; | &nbsp;
+  <b>Right:</b> U-Net + Dice Loss Prediction
+</p>
+
 ## How to Run
 
 1. Install dependencies:
