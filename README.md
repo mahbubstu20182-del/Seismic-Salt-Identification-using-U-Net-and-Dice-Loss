@@ -76,5 +76,5 @@ Quantitative evaluation using Dice coefficient and IoU metrics
 
 ## Author
 Mahbub Alam
-MSc in Geological Sciences (Remote Sensing & Environmental Sciences)
+MSc in Geological Sciences
 Jahangirnagar University
