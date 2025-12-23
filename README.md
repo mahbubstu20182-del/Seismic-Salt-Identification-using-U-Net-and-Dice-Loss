@@ -17,14 +17,14 @@ The objective of this project is to perform **pixel-level segmentation of salt b
 ## Methodology
 
 ### Model Architecture
-- **U-Net** encoder–decoder architecture with skip connections
-- Designed to preserve spatial resolution and boundary information
+- U-Net encoder–decoder architecture with skip connections  
+- Preserves spatial resolution and salt boundary continuity  
 - Implemented using **PyTorch**
 
 ### Training Strategy
-- Image preprocessing: normalization and resizing
-- Mini-batch training using multiple image–mask pairs
-- Optimizer: Adam
+- Image normalization and resizing  
+- Mini-batch training using multiple image–mask pairs  
+- Optimizer: **Adam**
 - Loss functions:
   - Binary Cross-Entropy (BCE)
   - Dice Loss to mitigate severe class imbalance between salt and background pixels
@@ -33,28 +33,20 @@ The objective of this project is to perform **pixel-level segmentation of salt b
 - Model predictions converted to probability maps using sigmoid activation
 - Binary masks generated through thresholding
 - Qualitative evaluation performed using transparent overlay visualization on seismic images
-- 
+  
 ## Results and Observations
 
-Initial experiments using BCE loss resulted in background-dominated predictions due to the strong class imbalance inherent in the dataset. Introducing Dice loss improved sensitivity to thin and sparse salt structures, leading to more localized and interpretable predictions. Multi-image training further stabilized model behavior and reduced extreme over- or under-prediction.
+Initial experiments using BCE loss resulted in background-dominated predictions due to strong class imbalance. Incorporating Dice loss significantly improved sensitivity to thin and sparse salt bodies, producing more localized and geologically meaningful segmentations. Training on multiple image–mask pairs further stabilized the learning process and reduced overfitting.
 
-The results demonstrate correct pipeline implementation and highlight common challenges in seismic image segmentation, particularly the trade-off between sensitivity and specificity in imbalanced datasets.
+The results demonstrate a correctly implemented segmentation pipeline and highlight common challenges in seismic image analysis, particularly the trade-off between sensitivity and specificity in highly imbalanced datasets.
 
 ## Visualization
 
-Qualitative comparison between the input seismic image, ground truth salt mask, and U-Net prediction trained using Dice loss.
+## Result Visualization
 
-<p align="center">
-  <img src="images/seismic.png" width="30%" />
-  <img src="images/ground_truth.png" width="30%" />
-  <img src="images/prediction.png" width="30%" />
-</p>
+![Salt Prediction Overlay](images/salt_prediction_overlay.png)
 
-<p align="center">
-  <b>Left:</b> Seismic Image &nbsp; | &nbsp;
-  <b>Middle:</b> Ground Truth Mask &nbsp; | &nbsp;
-  <b>Right:</b> U-Net + Dice Loss Prediction
-</p>
+Overlay of predicted salt bodies (red) on the seismic image using a U-Net model trained with Dice loss.
 
 ## How to Run
 
