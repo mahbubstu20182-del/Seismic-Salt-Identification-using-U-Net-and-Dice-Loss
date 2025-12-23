@@ -44,7 +44,7 @@ The results demonstrate a correctly implemented segmentation pipeline and highli
 
 ## Result Visualization
 
-![Salt Prediction Overlay](images/salt_prediction_overlay.png)
+![Salt Prediction Overlay](images/final_salt_overlay.png)
 
 Overlay of predicted salt bodies (red) on the seismic image using a U-Net model trained with Dice loss.
 
